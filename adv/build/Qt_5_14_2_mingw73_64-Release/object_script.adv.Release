@@ -1,0 +1,15 @@
+release/ad.o
+release/addao.o
+release/adlogic.o
+release/adresource.o
+release/adresourcedao.o
+release/cmdlogic.o
+release/fileutil.o
+release/main.o
+release/mainwindow.o
+release/moc_ad.o
+release/moc_adlogic.o
+release/moc_adresource.o
+release/moc_cmdlogic.o
+release/moc_fileutil.o
+release/moc_mainwindow.o

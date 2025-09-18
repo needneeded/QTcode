@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MusicWindow</class>
+ <widget class="QWidget" name="MusicWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>车载多媒体-音乐</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+#btn_play[mode='play']{
+	border-image: url(:/resource/music_images/play1.png);
+}
+
+#btn_play[mode='play']:hover{
+	border-image: url(:/resource/music_images/play1_hover.png);
+}
+
+#btn_play[mode='pause']{
+	
+	border-image: url(:/resource/music_images/pause.png);
+}
+
+#btn_play[mode='pause']:hover{
+	border-image: url(:/resource/music_images/pause_hover.png);
+}
+
+#btn_pre{
+	border-image: url(:/resource/music_images/pre.png);
+}
+
+#btn_pre:hover{
+	border-image: url(:/resource/music_images/pre_hover.png);
+}
+
+#btn_next{
+	border-image: url(:/resource/music_images/next.png);
+}
+
+#btn_next:hover{
+	border-image: url(:/resource/music_images/next_hover.png);
+}
+
+#btn_mode[mode='loop']{
+	border-image: url(:/resource/music_images/Loop.png);
+}
+#btn_mode[mode='sequential']{
+	border-image: url(:/resource/music_images/Sequence.png);
+}
+#btn_mode[mode='currentloop']{
+	border-image: url(:/resource/music_images/CurrentInLoop.png);
+}
+#btn_mode[mode='random']{
+	border-image: url(:/resource/music_images/Random.png);
+}
+
+#lb_1,#lb_2,#lb_3,#lb_4,#lb_5,#lb_6,#lb_7,#lb_emp1,#lb_emp2{
+	background-color:rgb(255, 193, 217);
+}
+</string>
+  </property>
+  <widget class="QTabWidget" name="tabWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>40</y>
+     <width>221</width>
+     <height>460</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:transparent;
+border-radius:10px;
+
+
+</string>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>20</width>
+     <height>16</height>
+    </size>
+   </property>
+   <widget class="QWidget" name="local">
+    <attribute name="title">
+     <string>本地列表</string>
+    </attribute>
+    <widget class="QListWidget" name="songList">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>210</width>
+       <height>430</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="online">
+    <attribute name="title">
+     <string>在线列表</string>
+    </attribute>
+    <widget class="QListWidget" name="onlienList">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>210</width>
+       <height>430</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QLabel" name="lb_background">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>500</y>
+     <width>800</width>
+     <height>100</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:rgb(255, 170, 186);
+border-radius:10px</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_pre">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>540</y>
+     <width>50</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:none;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QSlider" name="music_slider">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>560</y>
+     <width>570</width>
+     <height>10</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:none;
+
+</string>
+   </property>
+   <property name="maximum">
+    <number>100</number>
+   </property>
+   <property name="singleStep">
+    <number>1</number>
+   </property>
+   <property name="value">
+    <number>0</number>
+   </property>
+   <property name="sliderPosition">
+    <number>0</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_play">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>535</y>
+     <width>60</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:none;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_next">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>540</y>
+     <width>50</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:none;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lb_voice0">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>510</y>
+     <width>15</width>
+     <height>15</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>楷体</family>
+     <pointsize>5</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/resource/music_images/24gf-volumeHigh.png);
+background:none;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lb_voice1">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>510</y>
+     <width>15</width>
+     <height>15</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>5</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/resource/music_images/24gf-volumeLow.png);
+background:none;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QSlider" name="voice_slider">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>512</y>
+     <width>160</width>
+     <height>10</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:none;
+
+
+
+</string>
+   </property>
+   <property name="maximum">
+    <number>100</number>
+   </property>
+   <property name="singleStep">
+    <number>1</number>
+   </property>
+   <property name="value">
+    <number>50</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_back">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>40</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/resource/music_images/back3.png);
+background:none;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_loadFile">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>510</y>
+     <width>30</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/resource/music_images/file_open.png);
+background:none;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QWidget" name="verticalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>40</y>
+     <width>581</width>
+     <height>461</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QLabel" name="songName">
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 162, 192)</string>
+      </property>
+      <property name="text">
+       <string>歌名</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="lb_emp1">
+      <property name="font">
+       <font>
+        <pointsize>13</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="lb_1">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>暂无更多歌词</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="lb_2">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="lb_3">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="lb_4">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="lb_5">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="lb_6">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="lb_7">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="lb_emp2">
+      <property name="font">
+       <font>
+        <pointsize>13</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QPushButton" name="btn_mode">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>510</y>
+     <width>30</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:none</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lb_time">
+   <property name="geometry">
+    <rect>
+     <x>670</x>
+     <y>520</y>
+     <width>120</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:none</string>
+   </property>
+   <property name="text">
+    <string>10:10/10:10</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

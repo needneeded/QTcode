@@ -1,0 +1,1092 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Weather</class>
+ <widget class="QWidget" name="Weather">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>车载多媒体-天气</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background:qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 rgb(125, 199, 255), stop:1 rgb(229, 255, 255))
+
+</string>
+  </property>
+  <widget class="QLabel" name="label_1">
+   <property name="geometry">
+    <rect>
+     <x>12</x>
+     <y>320</y>
+     <width>100</width>
+     <height>260</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:rgb(213, 255, 255);
+border-top: 3px double yellow; </string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>124</x>
+     <y>320</y>
+     <width>100</width>
+     <height>260</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:rgb(231, 255, 255)</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>348</x>
+     <y>320</y>
+     <width>100</width>
+     <height>260</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:rgb(231, 255, 255)</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>572</x>
+     <y>320</y>
+     <width>100</width>
+     <height>260</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:rgb(231, 255, 255)</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>684</x>
+     <y>320</y>
+     <width>100</width>
+     <height>260</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:rgb(231, 255, 255)</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>236</x>
+     <y>320</y>
+     <width>100</width>
+     <height>260</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:rgb(231, 255, 255)</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_7">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>320</y>
+     <width>100</width>
+     <height>260</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:rgb(231, 255, 255)</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_date1">
+   <property name="geometry">
+    <rect>
+     <x>12</x>
+     <y>320</y>
+     <width>100</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:none</string>
+   </property>
+   <property name="text">
+    <string>6-24
+周二</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_icon1">
+   <property name="geometry">
+    <rect>
+     <x>12</x>
+     <y>380</y>
+     <width>100</width>
+     <height>100</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:none;
+border-image: url(:/resource/wea_images/bingbao.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_wea1">
+   <property name="geometry">
+    <rect>
+     <x>12</x>
+     <y>480</y>
+     <width>100</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>7</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:none</string>
+   </property>
+   <property name="text">
+    <string>小雨</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_temperature1">
+   <property name="geometry">
+    <rect>
+     <x>12</x>
+     <y>525</y>
+     <width>100</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:none</string>
+   </property>
+   <property name="text">
+    <string>22℃
+19℃</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_temperature2">
+   <property name="geometry">
+    <rect>
+     <x>124</x>
+     <y>525</y>
+     <width>100</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:none</string>
+   </property>
+   <property name="text">
+    <string>22℃
+19℃</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_date2">
+   <property name="geometry">
+    <rect>
+     <x>124</x>
+     <y>320</y>
+     <width>100</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:none</string>
+   </property>
+   <property name="text">
+    <string>6-24
+周二</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_icon2">
+   <property name="geometry">
+    <rect>
+     <x>124</x>
+     <y>380</y>
+     <width>100</width>
+     <height>100</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:none;
+border-image: url(:/resource/wea_images/bingbao.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_wea2">
+   <property name="geometry">
+    <rect>
+     <x>124</x>
+     <y>480</y>
+     <width>100</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>7</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:none</string>
+   </property>
+   <property name="text">
+    <string>小雨</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_temperature3">
+   <property name="geometry">
+    <rect>
+     <x>236</x>
+     <y>525</y>
+     <width>100</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:none</string>
+   </property>
+   <property name="text">
+    <string>22℃
+19℃</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_date3">
+   <property name="geometry">
+    <rect>
+     <x>236</x>
+     <y>320</y>
+     <width>100</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:none</string>
+   </property>
+   <property name="text">
+    <string>6-24
+周二</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_icon3">
+   <property name="geometry">
+    <rect>
+     <x>236</x>
+     <y>380</y>
+     <width>100</width>
+     <height>100</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:none;
+border-image: url(:/resource/wea_images/bingbao.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_wea3">
+   <property name="geometry">
+    <rect>
+     <x>236</x>
+     <y>480</y>
+     <width>100</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>7</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:none</string>
+   </property>
+   <property name="text">
+    <string>小雨</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_temperature4">
+   <property name="geometry">
+    <rect>
+     <x>348</x>
+     <y>525</y>
+     <width>100</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:none</string>
+   </property>
+   <property name="text">
+    <string>22℃
+19℃</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_date4">
+   <property name="geometry">
+    <rect>
+     <x>348</x>
+     <y>320</y>
+     <width>100</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:none</string>
+   </property>
+   <property name="text">
+    <string>6-24
+周二</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_icon4">
+   <property name="geometry">
+    <rect>
+     <x>348</x>
+     <y>380</y>
+     <width>100</width>
+     <height>100</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:none;
+border-image: url(:/resource/wea_images/bingbao.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_wea4">
+   <property name="geometry">
+    <rect>
+     <x>348</x>
+     <y>480</y>
+     <width>100</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>7</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:none</string>
+   </property>
+   <property name="text">
+    <string>小雨</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_date5">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>320</y>
+     <width>100</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:none</string>
+   </property>
+   <property name="text">
+    <string>6-24
+周二</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_temperature5">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>525</y>
+     <width>100</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:none</string>
+   </property>
+   <property name="text">
+    <string>22℃
+19℃</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_icon5">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>380</y>
+     <width>100</width>
+     <height>100</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:none;
+border-image: url(:/resource/wea_images/bingbao.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_wea5">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>480</y>
+     <width>100</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>7</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:none</string>
+   </property>
+   <property name="text">
+    <string>小雨</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_date6">
+   <property name="geometry">
+    <rect>
+     <x>572</x>
+     <y>320</y>
+     <width>100</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:none</string>
+   </property>
+   <property name="text">
+    <string>6-24
+周二</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_temperature6">
+   <property name="geometry">
+    <rect>
+     <x>572</x>
+     <y>525</y>
+     <width>100</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:none</string>
+   </property>
+   <property name="text">
+    <string>22℃
+19℃</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_icon6">
+   <property name="geometry">
+    <rect>
+     <x>572</x>
+     <y>380</y>
+     <width>100</width>
+     <height>100</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:none;
+border-image: url(:/resource/wea_images/bingbao.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_wea6">
+   <property name="geometry">
+    <rect>
+     <x>572</x>
+     <y>480</y>
+     <width>100</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>7</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:none</string>
+   </property>
+   <property name="text">
+    <string>小雨</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_date7">
+   <property name="geometry">
+    <rect>
+     <x>684</x>
+     <y>320</y>
+     <width>100</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:none</string>
+   </property>
+   <property name="text">
+    <string>6-24
+周二</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_temperature7">
+   <property name="geometry">
+    <rect>
+     <x>684</x>
+     <y>525</y>
+     <width>100</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:none</string>
+   </property>
+   <property name="text">
+    <string>22℃
+19℃</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_icon7">
+   <property name="geometry">
+    <rect>
+     <x>684</x>
+     <y>380</y>
+     <width>100</width>
+     <height>100</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:none;
+border-image: url(:/resource/wea_images/bingbao.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_wea7">
+   <property name="geometry">
+    <rect>
+     <x>684</x>
+     <y>480</y>
+     <width>100</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>7</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:none</string>
+   </property>
+   <property name="text">
+    <string>小雨</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_localName">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>60</y>
+     <width>280</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>28</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:transparent;
+</string>
+   </property>
+   <property name="text">
+    <string>呼和浩特市</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_icon">
+   <property name="geometry">
+    <rect>
+     <x>575</x>
+     <y>20</y>
+     <width>50</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:none;
+border-image: url(:/resource/wea_images/location.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_weatherIcon">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>160</y>
+     <width>80</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/resource/wea_images/bingbao.png);
+background:none;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_tem">
+   <property name="geometry">
+    <rect>
+     <x>540</x>
+     <y>170</y>
+     <width>140</width>
+     <height>100</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>18</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:none;</string>
+   </property>
+   <property name="text">
+    <string>-10.1℃</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_wea">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>250</y>
+     <width>100</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>7</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:none;</string>
+   </property>
+   <property name="text">
+    <string>小雨</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_datetime">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>140</y>
+     <width>380</width>
+     <height>110</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>22</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:none;
+font-family:微软雅黑;</string>
+   </property>
+   <property name="text">
+    <string>2025-06-24 周二
+17:00:00</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_backIcon">
+   <property name="geometry">
+    <rect>
+     <x>12</x>
+     <y>30</y>
+     <width>60</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/resource/back.png);
+background:none;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_backName">
+   <property name="geometry">
+    <rect>
+     <x>12</x>
+     <y>90</y>
+     <width>60</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>9</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:none;
+font-family:微软雅黑;</string>
+   </property>
+   <property name="text">
+    <string>返回</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_temMax">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>170</y>
+     <width>90</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>13</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:none;
+</string>
+   </property>
+   <property name="text">
+    <string>-10.1℃</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_temMin">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>220</y>
+     <width>90</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>13</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:none;</string>
+   </property>
+   <property name="text">
+    <string>-10.1℃</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -66,13 +66,13 @@ void AdLogic::dealAdPlayList(QByteArray adStr)
                 localPath = localPath.arg(ad.getId()).arg(fileInfo.fileName());
 
                 QFile file(localPath);
-                // 如果本次甲方的广告是之前完全没有的，是一个全新的，那么本次就也不会做判断，而是直接下载
+                // 如果本次广告之前没有则直接下载
                 if(!file.exists())
                 {
                     qDebug() << "之前的文件不存在";
                     fileUtil.downloadFile(ar.getUrl(),localPath);
                 }else{
-                    // 这个文件之前也有，但是本次不知道它是否有修改过，所以要判断sign
+                    // 如果之前有则根据sign判断
                     QString localSign = FileUtil::aesFile(localPath);
                     if(remoteSign != localSign)
                     {
@@ -80,16 +80,15 @@ void AdLogic::dealAdPlayList(QByteArray adStr)
                         qDebug() << "本次重新下载文件,就是sign不相等";
                     }
                 }
-                // 怎么把adResouce的数据存入数据库？
-                // 这个地方我们要考虑这个广告里面它的资源文件，哪些要在数据库修改，哪些需要再数据库新增
+
                 ar.setLocalPath(localPath);
                 arDao.add(ar);
             }
         }
     }
 
-    // 广告列表发生改变，要不要通知主进程去更改媒体的播放列表 QMediaPlayer
-    //3 搞一个定时器，比如每天晚上凌晨12:30，去定时删除已经过期的广告
+
+    // 使用定时器定时删除已经过期的广告
 }
 
 QList<Ad> AdLogic::adListParse(QByteArray adStr)
@@ -112,7 +111,7 @@ QList<Ad> AdLogic::adListParse(QByteArray adStr)
             Ad ad(id,templateId,i+1,startTime,endTime,state);
 
             QList<AdResource> *adResources = new QList<AdResource>;
-            // 假设6是上下分屏
+            // 上下分屏
             if(templateId == 6)
             {
                 // 这是先处理上半部分的资源信息

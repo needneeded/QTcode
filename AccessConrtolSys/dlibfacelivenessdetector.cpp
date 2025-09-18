@@ -48,7 +48,7 @@ bool DlibFaceLivenessDetector::processFrame(cv::Mat &frame)
             m_blinkCounter = 0;
         }
 
-        // 可视化（可选）
+        // 可视化
         // cv::rectangle(frame,
         //               cv::Point(face.left(), face.top()),
         //               cv::Point(face.right(), face.bottom()),

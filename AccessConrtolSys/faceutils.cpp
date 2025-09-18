@@ -14,9 +14,9 @@ FaceUtils::FaceUtils(const std::string& landmark_model_path) {
 }
 
 std::vector<float> FaceUtils::extract_face_features(const cv::Mat& image) {
-    //将输入的OpenCV格式图像（cv::Mat）转换为dlib库支持的图像格式 dlib::cv_image。
+    //将输入的OpenCV格式图像转换为dlib库支持的图像格式 dlib::cv_image。
     dlib::cv_image<dlib::bgr_pixel> dlib_image(image);
-    //使用dlib的人脸检测器（detector）检测图像中的所有可能人脸，返回人脸位置的矩形框列表。
+    //使用dlib的人脸检测器检测图像中的所有可能人脸，返回人脸位置的矩形框列表。
     std::vector<dlib::rectangle> faces = detector(dlib_image);
 
     // 说明未检测到任何人脸
@@ -34,7 +34,7 @@ std::vector<float> FaceUtils::_extract_geometric_features(
 
     std::vector<float> features;
 
-    // 1. 计算两眼之间的距离（归一化）
+    // 计算两眼之间的距离
     float left_eye_x = landmarks.part(39).x();  // 左眼内角（点36）
     float right_eye_x = landmarks.part(42).x(); // 右眼内角（点42）
     // 计算两眼间的欧氏距离
@@ -44,18 +44,16 @@ std::vector<float> FaceUtils::_extract_geometric_features(
         );
     features.push_back(eye_dist);
 
-    // 2. 嘴巴宽高比
+    // 嘴巴宽高比
     float mouth_width = std::abs(landmarks.part(54).x() - landmarks.part(48).x());
     float mouth_height = std::abs(landmarks.part(57).y() - landmarks.part(51).y());
     features.push_back(mouth_width / mouth_height);
 
-    // 3. 鼻子到下巴的垂直距离
+    // 鼻子到下巴的垂直距离
     float nose_to_chin = std::abs(landmarks.part(33).y() - landmarks.part(8).y());
     features.push_back(nose_to_chin);
 
-    // 4. 添加更多几何特征...
-    // 例如：眉毛弧度、脸颊宽度等
-    // 以左眉毛为例（关键点17-21）
+    // 添加更多几何特征...
     float eyebrow_curve = 0.0f;
     for (int i = 17; i < 21; ++i) {
         float dx = landmarks.part(i+1).x() - landmarks.part(i).x();

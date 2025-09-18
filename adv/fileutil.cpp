@@ -45,7 +45,7 @@ QString FileUtil::aesFile(QString localPath)
     QByteArray fileContent = file.readAll();
     file.close();
 
-    QByteArray encryptedContent = QCryptographicHash::hash(fileContent, QCryptographicHash::Sha256); // 这里仅为示例，实际使用时应使用专门的加密库如QtCrypto 或 QCA 或 OpenSSL 等。
+    QByteArray encryptedContent = QCryptographicHash::hash(fileContent, QCryptographicHash::Sha256);
 
     QString encryptedString = encryptedContent.toBase64(); // 将加密后的数据转换为Base64编码的字符串形式
 

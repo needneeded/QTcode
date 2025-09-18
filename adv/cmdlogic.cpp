@@ -57,11 +57,11 @@ void CmdLogic::executeCmd(QString cmd)
     {
         qDebug() << "指令执行失败:" << process.errorString();
     }else{
-        // ping www.baidu.com
+
         QByteArray output = process.readAllStandardOutput();
 
         QTextCodec* codec = QTextCodec::codecForName("system");
-        // 将byteArray转为一个unicode码 - 解决乱码问题
+        // 将byteArray转为unicode码来解决乱码问题
         QString msg = codec->toUnicode(output);
         qDebug() << "execut cmd:" << cmd <<",result is:"<< msg;
     }

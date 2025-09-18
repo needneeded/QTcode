@@ -57,7 +57,7 @@ void MainWindow::mqttInit()
 
 void MainWindow::splitterInit()
 {
-    // 创建主 Splitter（垂直方向，上下分屏）
+    // 创建主 Splitter
     QSplitter *splitter = new QSplitter(Qt::Vertical);
     this->videolist = this->ardao->selectResource(1);  // videolist[i].url 是本地路径 QString
     this->piclist = this->ardao->selectResource(2);
@@ -76,7 +76,7 @@ void MainWindow::splitterInit()
     topWidget->setStyleSheet("background-color: black;");
     bottomWidget->setStyleSheet("background-color: gray;");
 
-    // === 上半部分：视频播放 ===
+    // 视频播放部分
     QVBoxLayout *topLayout = new QVBoxLayout;
     QVideoWidget *videoWidget = new QVideoWidget;
     topLayout->addWidget(videoWidget);
@@ -89,9 +89,9 @@ void MainWindow::splitterInit()
     videoPlayer->setVideoOutput(videoWidget);
     videoPlayer->setPlaylist(playlist);
 
-    // 正确添加本地视频文件
+    // 添加本地视频文件
     for (int i = 0; i < count; ++i) {
-        // 本地路径，如 "D:/video/1.mp4"
+        // 本地路径
         QUrl videoUrl = QUrl::fromLocalFile(videolist[i]);
         playlist->addMedia(QMediaContent(videoUrl));
     }
@@ -99,7 +99,7 @@ void MainWindow::splitterInit()
     // 设置循环播放
     playlist->setPlaybackMode(QMediaPlaylist::Loop);
 
-    // === 下半部分：图片显示 ===
+    // 图片显示
     QVBoxLayout *bottomLayout = new QVBoxLayout;
     QLabel *imageLabel = new QLabel;
     imageLabel->setAlignment(Qt::AlignCenter);
@@ -122,7 +122,7 @@ void MainWindow::splitterInit()
 
     setCentralWidget(splitter);
 
-    // === 同步切换图片 ===
+    // 切换图片
     connect(playlist, &QMediaPlaylist::currentIndexChanged, this, [imageLabel, count, this](int index) {
         if (index < 0 || index >= count) return;
 
@@ -145,7 +145,7 @@ void MainWindow::receiveCmdMsg(QMqttMessage msg)
 {
     qDebug() << "接收到cmdTopic消息:" << QString(msg.payload());
 
-    // 解析内容中的json格式字符串，获取本次要做操作的cmd类型
+    // 解析内容中的json格式字符串，获取要做的cmd
     CmdLogic::getInstance()->execute(msg.payload());
 }
 

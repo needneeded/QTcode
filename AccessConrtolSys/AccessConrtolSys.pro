@@ -6,7 +6,7 @@ CONFIG += c++17
 
 INCLUDEPATH += D:\software\opencv\opencv-4.8.0\build\install\include
 
-# 配置opencv的库路径。注意：如果qt选择Debugger模式运行，那么库文件选择opencv_world480d。否则选择opencv_world480
+# 配置opencv的库路径
 LIBS += -LD:\software\opencv\opencv-4.8.0\build\lib\Release \
         -lopencv_core480 \
         -lopencv_imgproc480 \
